@@ -346,9 +346,9 @@ def build_header():
     b += '<circle class="pr" cx="907" cy="36" r="4" fill="#ec4899"/><circle cx="907" cy="36" r="4" fill="#f9a8d4"/>'
     b += ('<text class="m" x="923" y="40.5" font-size="12" letter-spacing="1" fill="#fbcfe8" font-weight="700">'
           'CO-CREATOR OF WHISPER</text>')
-    b += '<rect x="440" y="36" width="320" height="32" rx="16" fill="#ffffff" fill-opacity=".06" stroke="#f472b6" stroke-opacity=".55"/>'
-    b += ('<text class="m" x="600" y="57" font-size="13" text-anchor="middle" letter-spacing="2.2" fill="#fbcfe8" '
-          'font-weight="700">SOFTWARE DEVELOPER</text>')
+    b += '<rect x="410" y="36" width="380" height="32" rx="16" fill="#ffffff" fill-opacity=".06" stroke="#f472b6" stroke-opacity=".55"/>'
+    b += ('<text class="m" x="600" y="57" font-size="13" text-anchor="middle" letter-spacing="1.8" fill="#fbcfe8" '
+          'font-weight="700">FRONTEND WEB DEVELOPER</text>')
 
     # the hero: extruded name
     NAME, NX, NY = "SARA WALEED", 270, 200
@@ -361,18 +361,18 @@ def build_header():
     b += (f'<text x="{NX}" y="{NY}" font-size="80" font-weight="900" fill="none" stroke="#fff" stroke-opacity=".35" '
           f'stroke-width="1" {ex}>{NAME}</text>')
     b += (f'<text x="600" y="256" font-size="20" text-anchor="middle" fill="#cbd5e1" font-style="italic">'
-          f'Developer. Builder. Co-creator of Whisper.</text>')
+          f'Frontend Developer \u2022 React / Next.js \u2022 Co-creator of Whisper.</text>')
 
     # rotating one-liners (self-contained replacement for the typing-svg service)
     b += '<rect x="300" y="274" width="600" height="44" rx="22" fill="#12081c" fill-opacity=".78" stroke="#c084fc" stroke-opacity=".4"/>'
     b += '<circle class="pr" cx="330" cy="296" r="4" fill="#c084fc"/><circle cx="330" cy="296" r="4" fill="#f9a8d4"/>'
-    for i, t in enumerate(["Turning ideas into working software", "Co-forged Whisper with Omar M. Etman",
-                           "Real-time. Bilingual. Offline-ready."], 1):
+    for i, t in enumerate(["Pixel-perfect interfaces in React & Next.js", "Responsive. Accessible. Blazing fast.",
+                           "Co-forged Whisper with Omar M. Etman"], 1):
         b += (f'<text class="m rl r{i}" x="618" y="303" font-size="21" text-anchor="middle" fill="#f9a8d4" '
               f'font-weight="600">&gt; {esc(t)}</text>')
 
     # capability strip
-    items = ["Real-time Apps", "Bilingual Products", "AI Features", "Offline Mode"]
+    items = ["React / Next.js", "Responsive UI", "Tailwind CSS", "Node Basics"]
     widths = [len(t) * 14 * .64 for t in items]
     gap = 44
     total = sum(widths) + gap * (len(items) - 1)
@@ -396,7 +396,7 @@ def build_header():
 .r2{animation-delay:3s}.r3{animation-delay:6s}
 @media (prefers-reduced-motion:reduce){.r1{opacity:1}}
 """
-    save("header.svg", svg(W, H, "Sara Waleed: Software Developer, co-creator of Whisper",
+    save("header.svg", svg(W, H, "Sara Waleed: Frontend Web Developer, co-creator of Whisper",
                            b, d, css))
 
 
@@ -491,8 +491,8 @@ def build_character():
     b += '<rect x="278" y="30" width="1.5" height="274" fill="url(#vl)"/>'
 
     X0 = 312
-    rows = [("ORIGIN", "[ Your city, Country ]"), ("CLASS", "Software Developer"),
-            ("LEVEL", "[ Years of experience ]"), ("EDUCATION", "[ Your degree @ Your university ]")]
+    rows = [("ORIGIN", "Egypt"), ("CLASS", "Frontend Web Developer"),
+            ("LEVEL", "Professional \u2022 React / Next.js"), ("EDUCATION", "Computer Science")]
     for i, (k, v) in enumerate(rows):
         y = 46 + i * 46
         b += f'<text class="m" x="{X0}" y="{y}" font-size="11" letter-spacing="2.4" fill="{light(VIOLET, .4)}" font-weight="700">{k}</text>'
@@ -507,7 +507,7 @@ def build_character():
         b += m
         x += cw + 10
     save("character.svg", svg(W, H, "Character sheet: Sara Waleed", b, d,
-                              desc="Sara Waleed, Software Developer. Signature build: Whisper, co-forged with Omar M. Etman. "
+                              desc="Sara Waleed, Frontend Web Developer. Signature build: Whisper, co-forged with Omar M. Etman. "
                                    "Forged in Whisper: real-time chat, AI oracle, offline mode, bilingual."))
 
 
